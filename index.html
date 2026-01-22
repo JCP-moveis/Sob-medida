@@ -2,14 +2,16 @@
 <html lang="pt-BR">
 <head>
   <!-- ==============================
-    BÁSICO
+    1) BÁSICO DO DOCUMENTO
+    - charset e viewport sempre no topo
   =============================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ==============================
-    SEO (OBRIGATÓRIO)
-    IMPORTANTE: troque a URL abaixo pela do seu GitHub Pages
+    2) SEO (OBRIGATÓRIO)
+    - Title + Description + Robots
+    - Canonical deve ser a URL REAL do GitHub Pages
   =============================== -->
   <title>JCP Móveis Sob Medida em São José dos Pinhais | Planejados e Marcenaria</title>
   <meta name="description" content="JCP Móveis sob medida em São José dos Pinhais/PR. Planejados para cozinha, quarto, banheiro e escritório. Projeto, fabricação e instalação. Orçamento via WhatsApp." />
@@ -18,40 +20,54 @@
   <!-- Canonical (GitHub Pages) -->
   <link rel="canonical" href="https://jcp-moveis.github.io/Sob-medida/" />
 
-  <!-- Open Graph (preview WhatsApp/Redes) -->
+  <!-- ==============================
+    3) OPEN GRAPH (WhatsApp/Redes)
+    - Lição aprendida: manter og:url e og:image com URLs REAIS
+    - Se não tiver imagem OG pronta, depois a gente cria (1200x630)
+  =============================== -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="JCP Móveis Sob Medida | Planejados e Marcenaria" />
   <meta property="og:description" content="Móveis planejados e sob medida em São José dos Pinhais/PR. Projeto, fabricação e instalação. Fale no WhatsApp e peça seu orçamento." />
-  <meta property="og:url" content="https://SEUUSUARIO.github.io/jcp-moveis/" />
-  <meta property="og:image" content="https://SEUUSUARIO.github.io/jcp-moveis/img/og-jcp.jpg" />
+  <meta property="og:url" content="https://jcp-moveis.github.io/Sob-medida/" />
+  <meta property="og:image" content="https://jcp-moveis.github.io/Sob-medida/og-jcp.jpg" />
   <meta property="og:locale" content="pt_BR" />
 
-  <!-- Twitter Cards (opcional, mas bom) -->
+  <!-- ==============================
+    4) TWITTER CARDS (opcional, mas bom)
+  =============================== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="JCP Móveis Sob Medida | Planejados e Marcenaria" />
   <meta name="twitter:description" content="Móveis sob medida em São José dos Pinhais/PR. Peça orçamento via WhatsApp." />
-  <meta name="twitter:image" content="https://SEUUSUARIO.github.io/jcp-moveis/img/og-jcp.jpg" />
+  <meta name="twitter:image" content="https://jcp-moveis.github.io/Sob-medida/og-jcp.jpg" />
 
-  <!-- Favicon (opcional) -->
+  <!-- ==============================
+    5) FAVICON (ícone da aba)
+    - Lição aprendida: favicon precisa existir na pasta raiz
+    - Vamos criar favicon.png (ex.: 512x512) e apontar aqui
+  =============================== -->
   <link rel="icon" href="favicon.png" />
 
-  <!-- CSS -->
+  <!-- ==============================
+    6) CSS
+  =============================== -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <!-- ==============================
-    SKIP LINK (ACESSIBILIDADE)
+    7) ACESSIBILIDADE - SKIP LINK
+    - Ajuda teclado/leitores de tela a pular direto ao conteúdo
   =============================== -->
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <!-- ==============================
-    HEADER FIXO
+    8) HEADER (STICKY)
+    - Menu + CTA principal com tracking
   =============================== -->
   <header class="header" id="topo">
     <div class="container header__inner">
       <a class="brand" href="#topo" aria-label="Ir para o topo do site">
-        <!-- Logo: use sua logo aqui (img/logo.png) -->
+        <!-- Logo: manter leve e quadradinha (PNG) -->
         <img src="logo.png" alt="Logo JCP Móveis sob medida" class="brand__logo" loading="lazy" />
         <div class="brand__text">
           <strong class="brand__name">JCP Móveis</strong>
@@ -85,17 +101,18 @@
   </header>
 
   <!-- ==============================
-    MAIN
+    9) MAIN
   =============================== -->
   <main id="conteudo">
     <!-- ==============================
-      HERO
+      9.1) HERO (CAPA)
+      - Lição aprendida: primeira dobra precisa ser limpa, sem "vazio" em cima
+      - A imagem agora terá um tamanho menor (classe hero__media--sm)
     =============================== -->
     <section class="hero" aria-label="Apresentação">
       <div class="container hero__grid">
         <div class="hero__content">
-          <p class="badge">São José dos Pinhais • PR</p>
-
+          
           <h1>Móveis planejados e sob medida com acabamento profissional.</h1>
           <p class="hero__lead">
             Projeto, fabricação e instalação para cozinha, quartos, banheiros, lavanderia e escritório.
@@ -126,9 +143,11 @@
           </ul>
         </div>
 
-        <div class="hero__media" aria-label="Imagem principal">
-          <!-- Use a imagem da fachada como hero; pode trocar depois -->
-          <img src="fachada-jcp.png"
+        <!-- ✅ ALTERAÇÃO: hero__media--sm + hero__image -->
+        <div class="hero__media hero__media--sm" aria-label="Imagem principal">
+          <!-- Imagem da fachada (digital) -->
+          <img class="hero__image"
+               src="fachada-jcp.png"
                alt="Fachada da JCP Móveis sob medida"
                loading="lazy"
                width="720"
@@ -141,7 +160,8 @@
     </section>
 
     <!-- ==============================
-      SERVIÇOS
+      9.2) SERVIÇOS
+      - Lição aprendida: CTA por serviço ajuda conversão (e dá tracking)
     =============================== -->
     <section class="section" id="servicos" aria-label="Serviços">
       <div class="container">
@@ -203,7 +223,7 @@
     </section>
 
     <!-- ==============================
-      PROCESSO
+      9.3) PROCESSO
     =============================== -->
     <section class="section section--soft" id="processo" aria-label="Como trabalhamos">
       <div class="container">
@@ -256,7 +276,9 @@
     </section>
 
     <!-- ==============================
-      PROJETOS (GALERIA + LIGHTBOX)
+      9.4) PROJETOS
+      - Abertura por categoria (cozinha/quarto/homeoffice/outros)
+      - O script abre todas as imagens que contenham a palavra do data-category
     =============================== -->
     <section class="section" id="projetos" aria-label="Projetos">
       <div class="container">
@@ -266,45 +288,43 @@
         </header>
 
         <div class="gallery" aria-label="Galeria de projetos por categoria">
+          <button class="gallery__item" type="button"
+            data-js="categoryOpen"
+            data-category="cozinha"
+            aria-label="Abrir fotos de Cozinha">
+            <img src="cozinha-01.jpeg" alt="Cozinha sob medida" loading="lazy" width="520" height="360" />
+            <div class="gallery__label">Cozinha</div>
+          </button>
 
-  <button class="gallery__item" type="button"
-    data-js="categoryOpen"
-    data-category="cozinha"
-    aria-label="Abrir fotos de Cozinha">
-    <img src="cozinha-01.jpeg" alt="Cozinha sob medida" loading="lazy" width="520" height="360" />
-    <div class="gallery__label">Cozinha</div>
-  </button>
+          <button class="gallery__item" type="button"
+            data-js="categoryOpen"
+            data-category="quarto"
+            aria-label="Abrir fotos de Quarto e Closet">
+            <img src="quarto-01.jpeg" alt="Quarto e closet sob medida" loading="lazy" width="520" height="360" />
+            <div class="gallery__label">Quarto / Closet</div>
+          </button>
 
-  <button class="gallery__item" type="button"
-    data-js="categoryOpen"
-    data-category="quarto"
-    aria-label="Abrir fotos de Quarto e Closet">
-    <img src="quarto-01.jpeg" alt="Quarto e closet sob medida" loading="lazy" width="520" height="360" />
-    <div class="gallery__label">Quarto / Closet</div>
-  </button>
+          <button class="gallery__item" type="button"
+            data-js="categoryOpen"
+            data-category="homeoffice"
+            aria-label="Abrir fotos de Home office">
+            <img src="homeoffice-01.jpeg" alt="Home office sob medida" loading="lazy" width="520" height="360" />
+            <div class="gallery__label">Home office</div>
+          </button>
 
-  <button class="gallery__item" type="button"
-    data-js="categoryOpen"
-    data-category="homeoffice"
-    aria-label="Abrir fotos de Home office">
-    <img src="homeoffice-01.jpeg" alt="Home office sob medida" loading="lazy" width="520" height="360" />
-    <div class="gallery__label">Home office</div>
-  </button>
-
-  <button class="gallery__item" type="button"
-    data-js="categoryOpen"
-    data-category="outros"
-    aria-label="Abrir fotos de outros">
-    <img src="outros-01.jpeg" alt="Outros itens, como paineis de sala, lavanderia, banheiro, etc" loading="lazy" width="520" height="360" />
-    <div class="gallery__label">Outros</div>
-  </button>
-
-</div>
+          <button class="gallery__item" type="button"
+            data-js="categoryOpen"
+            data-category="outros"
+            aria-label="Abrir fotos de outros">
+            <img src="outros-01.jpeg" alt="Outros itens, como paineis de sala, lavanderia, banheiro, etc" loading="lazy" width="520" height="360" />
+            <div class="gallery__label">Outros</div>
+          </button>
+        </div>
       </div>
     </section>
 
     <!-- ==============================
-      CONTATO
+      9.5) CONTATO
     =============================== -->
     <section class="section section--soft" id="contato" aria-label="Contato">
       <div class="container contact">
@@ -361,7 +381,7 @@
   </main>
 
   <!-- ==============================
-    FOOTER COMPLETO
+    10) FOOTER
   =============================== -->
   <footer class="footer" aria-label="Rodapé">
     <div class="container footer__grid">
@@ -389,7 +409,7 @@
   </footer>
 
   <!-- ==============================
-    LIGHTBOX (MODAL)
+    11) LIGHTBOX (MODAL)
   =============================== -->
   <div class="lightbox" hidden aria-hidden="true" role="dialog" aria-label="Visualização de imagem" data-js="lightbox">
     <div class="lightbox__overlay" data-js="lightboxClose" aria-label="Fechar"></div>
@@ -400,7 +420,9 @@
     </div>
   </div>
 
-  <!-- JS -->
+  <!-- ==============================
+    12) JS
+  =============================== -->
   <script src="script.js" defer></script>
 </body>
 </html>

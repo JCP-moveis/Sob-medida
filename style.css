@@ -4,6 +4,10 @@
   - Paleta inspirada na fachada (verde/azulado + neutros)
 ========================================================= */
 
+/* =========================================================
+  1) VARIÁVEIS DO TEMA
+  - Ajuste as cores e medidas gerais aqui
+========================================================= */
 :root{
   --bg: #0f1416;
   --surface: #ffffff;
@@ -24,7 +28,9 @@
   --header-h: 74px;
 }
 
-/* Reset básico */
+/* =========================================================
+  2) RESET / BASE GLOBAL
+========================================================= */
 *{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
 body{
@@ -42,7 +48,9 @@ img{ max-width: 100%; height: auto; display: block; }
   margin: 0 auto;
 }
 
-/* Skip link */
+/* =========================================================
+  3) ACESSIBILIDADE - SKIP LINK
+========================================================= */
 .skip-link{
   position: absolute;
   left: -999px;
@@ -56,7 +64,8 @@ img{ max-width: 100%; height: auto; display: block; }
 .skip-link:focus{ left: 16px; }
 
 /* =========================================================
-  HEADER FIXO
+  4) HEADER (STICKY)
+  - Importante: sticky não exige "compensação" no HERO
 ========================================================= */
 .header{
   position: sticky;
@@ -75,6 +84,9 @@ img{ max-width: 100%; height: auto; display: block; }
   gap: 14px;
 }
 
+/* =========================================================
+  5) MARCA (LOGO + TEXTO)
+========================================================= */
 .brand{
   display: flex;
   align-items: center;
@@ -94,7 +106,9 @@ img{ max-width: 100%; height: auto; display: block; }
 .brand__name{ display: block; font-size: 15px; letter-spacing: .2px; }
 .brand__tag{ display: block; font-size: 12px; color: var(--muted); }
 
-/* Nav */
+/* =========================================================
+  6) NAV (DESKTOP)
+========================================================= */
 .nav{
   display: flex;
   align-items: center;
@@ -110,7 +124,9 @@ img{ max-width: 100%; height: auto; display: block; }
 }
 .nav a:hover{ background: rgba(117,138,141,.12); }
 
-/* Toggle mobile */
+/* =========================================================
+  7) MENU MOBILE - BOTÃO HAMBURGER
+========================================================= */
 .nav__toggle{
   display: none;
   width: 44px;
@@ -130,7 +146,7 @@ img{ max-width: 100%; height: auto; display: block; }
 }
 
 /* =========================================================
-  BOTÕES
+  8) BOTÕES
 ========================================================= */
 .btn{
   display: inline-flex;
@@ -164,14 +180,17 @@ img{ max-width: 100%; height: auto; display: block; }
 .btn--lg{ padding: 12px 16px; border-radius: 14px; }
 
 /* =========================================================
-  HERO
+  9) HERO (CAPA) — FUNDO HARMONIZADO + CARD DA FACHADA
+  - Header é sticky: não precisa compensar altura
+  - Fundo conversa com a paleta da fachada (verde/azulado)
+  - Tamanho da mídia controlado pelo card (container)
 ========================================================= */
 .hero{
-  padding: calc(var(--header-h) + 22px) 0 46px;
+  padding: 34px 0 46px;
   background:
-    radial-gradient(1000px 500px at 10% 0%, rgba(117,138,141,.25), transparent 60%),
-    radial-gradient(900px 400px at 90% 10%, rgba(209,219,230,.35), transparent 60%),
-    linear-gradient(180deg, #ffffff, #f7f9fa);
+    radial-gradient(900px 520px at 75% 55%, rgba(117,138,141,.22), transparent 60%),
+    radial-gradient(700px 420px at 18% 18%, rgba(209,219,230,.42), transparent 58%),
+    linear-gradient(180deg, #ffffff 0%, #f5f8f9 100%);
   border-bottom: 1px solid var(--border);
 }
 
@@ -182,6 +201,7 @@ img{ max-width: 100%; height: auto; display: block; }
   align-items: center;
 }
 
+/* (Badge pode ficar no CSS para reuso, mesmo que você remova do HTML) */
 .badge{
   display: inline-block;
   padding: 6px 10px;
@@ -219,15 +239,33 @@ img{ max-width: 100%; height: auto; display: block; }
   color: var(--muted);
 }
 
+/* Card da imagem */
 .hero__media{
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  background: #fff;
+  background: rgba(255,255,255,.55);
+  backdrop-filter: blur(2px);
+
+  /* Controle real do tamanho visual */
+  max-height: 400px;      /* ajuste fino: 360 / 380 / 400 */
+  aspect-ratio: 3 / 2;
 }
-.hero__media img{ width: 100%; height: 100%; object-fit: cover; }
+
+.hero__media img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Largura menor no desktop (quando você usa a classe extra no HTML) */
+.hero__media--sm{
+  max-width: 560px;       /* ajuste aqui: 520 / 560 / 600 */
+  justify-self: end;
+}
 
 .hero__mediaNote{
   position: absolute;
@@ -242,7 +280,7 @@ img{ max-width: 100%; height: auto; display: block; }
 }
 
 /* =========================================================
-  SEÇÕES
+  10) SEÇÕES
 ========================================================= */
 .section{ padding: 56px 0; }
 .section--soft{ background: var(--surface-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -259,7 +297,9 @@ img{ max-width: 100%; height: auto; display: block; }
 }
 .section__header p{ margin: 0; color: var(--muted); }
 
-/* Cards */
+/* =========================================================
+  11) CARDS (SERVIÇOS)
+========================================================= */
 .cards{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -292,7 +332,9 @@ img{ max-width: 100%; height: auto; display: block; }
 .center{ text-align: center; margin-top: 16px; }
 .note{ margin-top: 16px; color: var(--muted); font-size: 14px; }
 
-/* Steps */
+/* =========================================================
+  12) STEPS (PROCESSO)
+========================================================= */
 .steps{
   list-style: none;
   padding: 0;
@@ -322,7 +364,9 @@ img{ max-width: 100%; height: auto; display: block; }
 .step h3{ margin: 0 0 4px; font-size: 15px; }
 .step p{ margin: 0; color: var(--muted); }
 
-/* Gallery */
+/* =========================================================
+  13) GALLERY (PROJETOS)
+========================================================= */
 .gallery{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -344,7 +388,9 @@ img{ max-width: 100%; height: auto; display: block; }
   object-fit: cover;
 }
 
-/* Contact */
+/* =========================================================
+  14) CONTATO
+========================================================= */
 .contact{
   display: grid;
   grid-template-columns: 1.1fr .9fr;
@@ -371,7 +417,9 @@ img{ max-width: 100%; height: auto; display: block; }
   flex-wrap: wrap;
 }
 
-/* Map */
+/* =========================================================
+  15) MAPA
+========================================================= */
 .map__box{
   background: #fff;
   border: 1px solid var(--border);
@@ -393,7 +441,9 @@ img{ max-width: 100%; height: auto; display: block; }
 }
 .map__link:hover{ background: rgba(209,219,230,.75); }
 
-/* Footer */
+/* =========================================================
+  16) FOOTER
+========================================================= */
 .footer{
   background: var(--dark);
   color: #fff;
@@ -418,7 +468,7 @@ img{ max-width: 100%; height: auto; display: block; }
 }
 
 /* =========================================================
-  LIGHTBOX
+  17) LIGHTBOX
 ========================================================= */
 .lightbox{
   position: fixed;
@@ -465,7 +515,7 @@ img{ max-width: 100%; height: auto; display: block; }
 }
 
 /* =========================================================
-  RESPONSIVO
+  18) RESPONSIVO
 ========================================================= */
 @media (max-width: 980px){
   .hero__grid{ grid-template-columns: 1fr; }
@@ -496,8 +546,14 @@ img{ max-width: 100%; height: auto; display: block; }
 
   .cards{ grid-template-columns: 1fr; }
   .gallery__item img{ height: 190px; }
+
+  /* ✅ Ajuste fino no HERO para mobile (menos respiro ainda) */
+  .hero{
+    padding: 26px 0 40px;
+  }
 }
 
+/* Mantido do seu CSS */
 .gallery__item{
   position: relative;
 }
@@ -505,7 +561,6 @@ img{ max-width: 100%; height: auto; display: block; }
 /* =========================================================
   Card com mais imagens - alteração
 ========================================================= */
-
 .gallery__label{
   position: absolute;
   left: 10px;
@@ -516,4 +571,69 @@ img{ max-width: 100%; height: auto; display: block; }
   border: 1px solid rgba(0,0,0,.10);
   font-weight: 900;
   font-size: 14px;
+}
+
+/* =========================================================
+  HERO - Ajuste do tamanho da mídia (fachada)
+  Objetivo:
+  - Diminuir o CARD da imagem (não a imagem por dentro)
+  - Evitar “borda” branca
+========================================================= */
+
+/* Diminuir o card todo */
+.hero__media--sm{
+  max-width: 560px;       /* ajuste aqui: 520 / 560 / 600 */
+  justify-self: end;      /* mantém alinhado à direita */
+  background: transparent;/* evita aparência de borda */
+}
+
+/* Garantir que a imagem preencha o card (sem sobras) */
+.hero__media--sm img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;      /* mantém o visual “cheio” como antes */
+}
+
+/* Se quiser ainda menor em telas grandes, pode usar também:
+.hero__media--sm{ max-width: 520px; }
+*/
+
+/* No mobile: ocupa tudo (padrão bonito) */
+@media (max-width: 980px){
+  .hero__media--sm{
+    max-width: 100%;
+    justify-self: stretch;
+    background: #fff; /* aqui pode voltar ao branco sem problema */
+  }
+}
+
+/* =========================================================
+  HERO — TAMANHO DO CARD (DESKTOP vs MOBILE)
+  Como funciona:
+  - .hero__media controla ALTURA/PROPORÇÃO
+  - .hero__media--sm controla LARGURA no desktop
+========================================================= */
+
+/* Altura/proporção do card (controle real do “tamanho visual”) */
+.hero__media{
+  max-height: 400px;      /* ajuste fino: 360 / 380 / 400 */
+  aspect-ratio: 3 / 2;    /* mantém proporção elegante */
+}
+
+/* No desktop: card um pouco menor e alinhado à direita */
+.hero__media--sm{
+  max-width: 560px;       /* ajuste aqui: 520 / 560 / 600 */
+  justify-self: end;
+}
+
+/* No mobile: ocupa a largura toda e fica lindo */
+@media (max-width: 980px){
+  .hero__media{
+    max-height: 320px;
+  }
+  .hero__media--sm{
+    max-width: 100%;
+    justify-self: stretch;
+  }
 }
