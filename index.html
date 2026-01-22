@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ==============================
+    BÁSICO
+  =============================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==============================
+    SEO (OBRIGATÓRIO)
+    IMPORTANTE: troque a URL abaixo pela do seu GitHub Pages
+  =============================== -->
+  <title>JCP Móveis Sob Medida em São José dos Pinhais | Planejados e Marcenaria</title>
+  <meta name="description" content="JCP Móveis sob medida em São José dos Pinhais/PR. Planejados para cozinha, quarto, banheiro e escritório. Projeto, fabricação e instalação. Orçamento via WhatsApp." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical (GitHub Pages) -->
+  <link rel="canonical" href="https://SEUUSUARIO.github.io/jcp-moveis/" />
+
+  <!-- Open Graph (preview WhatsApp/Redes) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="JCP Móveis Sob Medida | Planejados e Marcenaria" />
+  <meta property="og:description" content="Móveis planejados e sob medida em São José dos Pinhais/PR. Projeto, fabricação e instalação. Fale no WhatsApp e peça seu orçamento." />
+  <meta property="og:url" content="https://SEUUSUARIO.github.io/jcp-moveis/" />
+  <meta property="og:image" content="https://SEUUSUARIO.github.io/jcp-moveis/img/og-jcp.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Cards (opcional, mas bom) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JCP Móveis Sob Medida | Planejados e Marcenaria" />
+  <meta name="twitter:description" content="Móveis sob medida em São José dos Pinhais/PR. Peça orçamento via WhatsApp." />
+  <meta name="twitter:image" content="https://SEUUSUARIO.github.io/jcp-moveis/img/og-jcp.jpg" />
+
+  <!-- Favicon (opcional) -->
+  <link rel="icon" href="favicon.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ==============================
+    SKIP LINK (ACESSIBILIDADE)
+  =============================== -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ==============================
+    HEADER FIXO
+  =============================== -->
+  <header class="header" id="topo">
+    <div class="container header__inner">
+      <a class="brand" href="#topo" aria-label="Ir para o topo do site">
+        <!-- Logo: use sua logo aqui (img/logo.png) -->
+        <img src="logo.png" alt="Logo JCP Móveis sob medida" class="brand__logo" loading="lazy" />
+        <div class="brand__text">
+          <strong class="brand__name">JCP Móveis</strong>
+          <span class="brand__tag">Sob medida • Planejados</span>
+        </div>
+      </a>
+
+      <button class="nav__toggle" type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        data-js="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" aria-label="Menu principal" data-js="nav">
+        <a href="#servicos">Serviços</a>
+        <a href="#processo">Como trabalhamos</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+
+        <!-- CTA topo (tracking) -->
+        <a class="btn btn--primary"
+           href="https://wa.me/5541996054500?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20m%C3%B3veis%20sob%20medida."
+           target="_blank" rel="noopener"
+           aria-label="Falar com a JCP Móveis no WhatsApp"
+           data-analytics-id="cta_whatsapp_topo">
+          Falar no WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==============================
+    MAIN
+  =============================== -->
+  <main id="conteudo">
+    <!-- ==============================
+      HERO
+    =============================== -->
+    <section class="hero" aria-label="Apresentação">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="badge">São José dos Pinhais • PR</p>
+
+          <h1>Móveis planejados e sob medida com acabamento profissional.</h1>
+          <p class="hero__lead">
+            Projeto, fabricação e instalação para cozinha, quartos, banheiros, lavanderia e escritório.
+            Atendimento direto com a <strong>JCP Móveis</strong>.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--lg"
+               href="https://wa.me/5541996054500?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20m%C3%B3veis%20sob%20medida."
+               target="_blank" rel="noopener"
+               aria-label="Pedir orçamento via WhatsApp"
+               data-analytics-id="cta_whatsapp_hero">
+              Pedir orçamento no WhatsApp
+            </a>
+
+            <a class="btn btn--ghost btn--lg"
+               href="#projetos"
+               aria-label="Ver seção de projetos"
+               data-analytics-id="bt_ver_projetos">
+              Ver projetos
+            </a>
+          </div>
+
+          <ul class="hero__bullets" aria-label="Destaques">
+            <li>Medidas precisas e montagem caprichada</li>
+            <li>Planejamento otimizado do espaço</li>
+            <li>Atendimento rápido pelo WhatsApp</li>
+          </ul>
+        </div>
+
+        <div class="hero__media" aria-label="Imagem principal">
+          <!-- Use a imagem da fachada como hero; pode trocar depois -->
+          <img src="fachada-jcp.png"
+               alt="Fachada da JCP Móveis sob medida"
+               loading="lazy"
+               width="720"
+               height="480" />
+          <div class="hero__mediaNote">
+            <span>📍 Rua Otavio Claudino de Camargo, 509</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+      SERVIÇOS
+    =============================== -->
+    <section class="section" id="servicos" aria-label="Serviços">
+      <div class="container">
+        <header class="section__header">
+          <h2>Serviços</h2>
+          <p>Planejados sob medida do projeto à instalação.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Cozinhas planejadas</h3>
+            <p>Layout funcional, aproveitamento de espaço e acabamento alinhado ao seu estilo.</p>
+            <a class="card__cta"
+               href="https://wa.me/5541996054500?text=Quero%20or%C3%A7amento%20para%20cozinha%20planejada."
+               target="_blank" rel="noopener"
+               aria-label="Pedir preço de cozinha planejada no WhatsApp"
+               data-analytics-id="bt_preco_cozinha_planejada">
+              Ver preço / orçamento →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Quartos e closets</h3>
+            <p>Guarda-roupas, painéis e closets planejados com medidas e divisões sob demanda.</p>
+            <a class="card__cta"
+               href="https://wa.me/5541996054500?text=Quero%20or%C3%A7amento%20para%20quarto%20ou%20closet%20planejado."
+               target="_blank" rel="noopener"
+               aria-label="Pedir preço de quarto ou closet planejado no WhatsApp"
+               data-analytics-id="bt_preco_quarto_closet">
+              Ver preço / orçamento →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Banheiros e lavanderia</h3>
+            <p>Gabinetes, nichos e soluções resistentes para ambientes úmidos.</p>
+            <a class="card__cta"
+               href="https://wa.me/5541996054500?text=Quero%20or%C3%A7amento%20para%20banheiro%20ou%20lavanderia%20sob%20medida."
+               target="_blank" rel="noopener"
+               aria-label="Pedir preço de banheiro ou lavanderia no WhatsApp"
+               data-analytics-id="bt_preco_banheiro_lavanderia">
+              Ver preço / orçamento →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Escritórios e home office</h3>
+            <p>Mesas, armários e painéis com ergonomia e organização para seu dia a dia.</p>
+            <a class="card__cta"
+               href="https://wa.me/5541996054500?text=Quero%20or%C3%A7amento%20para%20home%20office%20planejado."
+               target="_blank" rel="noopener"
+               aria-label="Pedir preço de home office planejado no WhatsApp"
+               data-analytics-id="bt_preco_home_office">
+              Ver preço / orçamento →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+      PROCESSO
+    =============================== -->
+    <section class="section section--soft" id="processo" aria-label="Como trabalhamos">
+      <div class="container">
+        <header class="section__header">
+          <h2>Como trabalhamos</h2>
+          <p>Um processo simples para garantir qualidade e prazo.</p>
+        </header>
+
+        <ol class="steps" aria-label="Etapas do processo">
+          <li class="step">
+            <span class="step__n">1</span>
+            <div>
+              <h3>Contato e necessidade</h3>
+              <p>Você chama no WhatsApp e conta o que precisa (ambiente, medidas, referências).</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">2</span>
+            <div>
+              <h3>Orçamento e alinhamento</h3>
+              <p>Definimos escopo, materiais e prazo com clareza antes de iniciar.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">3</span>
+            <div>
+              <h3>Fabricação</h3>
+              <p>Produção sob medida com foco em acabamento e encaixes corretos.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">4</span>
+            <div>
+              <h3>Instalação</h3>
+              <p>Montagem e ajustes finais para entregar tudo pronto para uso.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="center">
+          <a class="btn btn--primary"
+             href="https://wa.me/5541996054500?text=Ol%C3%A1%21%20Quero%20fazer%20um%20or%C3%A7amento%20com%20a%20JCP%20M%C3%B3veis."
+             target="_blank" rel="noopener"
+             aria-label="Chamar a JCP Móveis para orçamento no WhatsApp"
+             data-analytics-id="cta_whatsapp_orcamento">
+            Fazer orçamento agora
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+      PROJETOS (GALERIA + LIGHTBOX)
+    =============================== -->
+    <section class="section" id="projetos" aria-label="Projetos">
+      <div class="container">
+        <header class="section__header">
+          <h2>Projetos</h2>
+          <p>Alguns exemplos (substitua pelas fotos reais do cliente).</p>
+        </header>
+
+        <div class="gallery" aria-label="Galeria de projetos por categoria">
+
+  <button class="gallery__item" type="button"
+    data-js="categoryOpen"
+    data-category="cozinha"
+    aria-label="Abrir fotos de Cozinha">
+    <img src="cozinha-01.jpeg" alt="Cozinha sob medida" loading="lazy" width="520" height="360" />
+    <div class="gallery__label">Cozinha</div>
+  </button>
+
+  <button class="gallery__item" type="button"
+    data-js="categoryOpen"
+    data-category="quarto"
+    aria-label="Abrir fotos de Quarto e Closet">
+    <img src="quarto-01.jpeg" alt="Quarto e closet sob medida" loading="lazy" width="520" height="360" />
+    <div class="gallery__label">Quarto / Closet</div>
+  </button>
+
+  <button class="gallery__item" type="button"
+    data-js="categoryOpen"
+    data-category="homeoffice"
+    aria-label="Abrir fotos de Home office">
+    <img src="homeoffice-01.jpeg" alt="Home office sob medida" loading="lazy" width="520" height="360" />
+    <div class="gallery__label">Home office</div>
+  </button>
+
+  <button class="gallery__item" type="button"
+    data-js="categoryOpen"
+    data-category="outros"
+    aria-label="Abrir fotos de outros">
+    <img src="outros-01.jpeg" alt="Outros itens, como paineis de sala, lavanderia, banheiro, etc" loading="lazy" width="520" height="360" />
+    <div class="gallery__label">Outros</div>
+  </button>
+
+</div>
+      </div>
+    </section>
+
+    <!-- ==============================
+      CONTATO
+    =============================== -->
+    <section class="section section--soft" id="contato" aria-label="Contato">
+      <div class="container contact">
+        <div>
+          <header class="section__header section__header--left">
+            <h2>Contato</h2>
+            <p>Atendimento rápido pelo WhatsApp.</p>
+          </header>
+
+          <ul class="contact__list" aria-label="Informações de contato">
+            <li><strong>Responsável:</strong> Jefferson Cesar Picancio</li>
+            <li><strong>WhatsApp:</strong> (41) 99605-4500</li>
+            <li><strong>E-mail:</strong> <a href="mailto:oficinamoveis@gmail.com" aria-label="Enviar e-mail para oficinamoveis@gmail.com">oficinamoveis@gmail.com</a></li>
+            <li><strong>Endereço:</strong> Rua Otavio Claudino de Camargo, 509</li>
+            <li><strong>CEP:</strong> 83010-400 • <strong>Cidade/UF:</strong> São José dos Pinhais/PR</li>
+          </ul>
+
+          <div class="contact__cta">
+            <a class="btn btn--primary btn--lg"
+               href="https://wa.me/5541996054500?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento."
+               target="_blank" rel="noopener"
+               aria-label="Falar com a JCP Móveis no WhatsApp (seção contato)"
+               data-analytics-id="bt_contato_whatsapp_contato">
+              Falar no WhatsApp
+            </a>
+
+            <a class="btn btn--ghost btn--lg"
+               href="mailto:oficinamoveis@gmail.com?subject=Or%C3%A7amento%20-%20JCP%20M%C3%B3veis"
+               aria-label="Enviar e-mail para a JCP Móveis"
+               data-analytics-id="bt_contato_email">
+              Enviar e-mail
+            </a>
+          </div>
+        </div>
+
+        <div class="map" aria-label="Mapa (opcional)">
+          <!-- Sem Google Maps embed para manter leve e evitar bloqueios.
+               Se quiser, depois você pode colocar um iframe aqui. -->
+          <div class="map__box">
+            <h3>Localização</h3>
+            <p>São José dos Pinhais/PR</p>
+            <a class="map__link"
+               href="https://www.google.com/maps/search/?api=1&query=Rua%20Otavio%20Claudino%20de%20Camargo%20509%20S%C3%A3o%20Jos%C3%A9%20dos%20Pinhais%20PR"
+               target="_blank" rel="noopener"
+               aria-label="Abrir endereço no Google Maps"
+               data-analytics-id="bt_mapa_google">
+              Abrir no Google Maps →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================
+    FOOTER COMPLETO
+  =============================== -->
+  <footer class="footer" aria-label="Rodapé">
+    <div class="container footer__grid">
+      <div>
+        <strong>JCP Móveis sob medida</strong>
+        <p class="muted">Móveis planejados e marcenaria sob medida.</p>
+        <p class="muted">São José dos Pinhais • PR</p>
+      </div>
+
+      <div class="footer__actions">
+        <a class="btn btn--primary"
+           href="https://wa.me/5541996054500?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20m%C3%B3veis%20sob%20medida."
+           target="_blank" rel="noopener"
+           aria-label="Falar no WhatsApp (rodapé)"
+           data-analytics-id="cta_whatsapp_rodape">
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© <span id="anoAtual">2026</span> JCP Móveis sob medida. Todos os direitos reservados.</span>
+      <span class="muted">Site estático hospedado no GitHub Pages.</span>
+    </div>
+  </footer>
+
+  <!-- ==============================
+    LIGHTBOX (MODAL)
+  =============================== -->
+  <div class="lightbox" hidden aria-hidden="true" role="dialog" aria-label="Visualização de imagem" data-js="lightbox">
+    <div class="lightbox__overlay" data-js="lightboxClose" aria-label="Fechar"></div>
+    <div class="lightbox__content" role="document">
+      <button class="lightbox__close" type="button" data-js="lightboxClose" aria-label="Fechar imagem">✕</button>
+      <img src="" alt="" data-js="lightboxImg" />
+      <p class="lightbox__caption" data-js="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js" defer></script>
+</body>
+</html>
