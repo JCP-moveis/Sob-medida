@@ -9,24 +9,32 @@
   - Ajuste as cores e medidas gerais aqui
 ========================================================= */
 :root{
-  --bg: #0f1416;
-  --surface: #ffffff;
-  --surface-2: #f4f6f7;
-  --text: #12171a;
-  --muted: #5a6770;
+  /* Fundo geral */
+  --bg: #f4f8f9;                 /* azul muito claro, moderno */
+  --surface: #eef4f6;            /* cards / blocos */
+  --surface-2: #e4d7cb8a;          /* toque quente (madeira leve) */
 
-  --brand: #758A8D;      /* cor principal (fachada) */
-  --brand-2: #D1DBE6;    /* realce claro */
+  /* Texto */
+  --text: #171e22;               /* mais suave que preto */
+  --muted: #46535b;              /* textos secundários */
+
+  /* Marca */
+  --brand: #5f7f87;              /* azul JCP (principal) */
+  --brand-2: #cfe1e6;            /* azul claro de apoio */
+  --brand-soft: #e8f1f3;         /* fundo suave com identidade */
+
+  /* Header escuro/transparente */
   --dark: #0f1416;
 
-  --border: rgba(18, 23, 26, 0.12);
-  --shadow: 0 10px 30px rgba(0,0,0,.12);
+  /* UI */
+  --border: rgba(31, 42, 48, 0.12);
+  --shadow: 0 10px 30px rgba(0,0,0,.10);
 
   --radius: 14px;
   --container: 1120px;
-
   --header-h: 74px;
 }
+
 
 /* =========================================================
   2) RESET / BASE GLOBAL
@@ -68,12 +76,21 @@ img{ max-width: 100%; height: auto; display: block; }
   - Importante: sticky não exige "compensação" no HERO
 ========================================================= */
 .header{
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1000;
-  background: rgba(255,255,255,.88);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+
+  background: transparent;
+  border-bottom: none;
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.scrolled{
+  background-color: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .header__inner{
@@ -83,6 +100,15 @@ img{ max-width: 100%; height: auto; display: block; }
   justify-content: space-between;
   gap: 14px;
 }
+
+/* HEADER TRANSPARENTE — textos brancos */
+.header:not(.scrolled) .brand__name,
+.header:not(.scrolled) .brand__tag,
+.header:not(.scrolled) .nav a {
+  color: #ffffff;
+}
+
+
 
 /* =========================================================
   5) MARCA (LOGO + TEXTO)
@@ -635,5 +661,97 @@ img{ max-width: 100%; height: auto; display: block; }
   .hero__media--sm{
     max-width: 100%;
     justify-self: stretch;
+  }
+}
+
+.hero--cover{
+  position: relative;
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
+  background-image: url("capa-home.png");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Véu para contraste */
+.hero__overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.25)
+  );
+}
+
+/* Conteúdo da capa */
+.hero__coverContent{
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.hero__coverContent h1{
+  color: #fff;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+}
+
+.section--intro{
+  padding-top: 48px;
+  padding-bottom: 56px;
+
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    var(--brand-blue-soft) 35%,
+    var(--brand-blue-soft-2) 100%
+  );
+}
+
+
+.intro{
+  max-width: 760px;
+  text-align: left;
+}
+
+.intro__lead{
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.intro__highlight{
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.intro__cta{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.intro__bullets{
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+@media (max-width: 760px){
+  .hero--cover{
+    min-height: 52vh;
+  }
+
+  .hero__coverContent h1{
+    font-size: 30px;
+  }
+
+  .intro{
+    text-align: left;
   }
 }
